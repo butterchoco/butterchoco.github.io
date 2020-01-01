@@ -1,6 +1,8 @@
 <template>
     <Layout>
         <div class="markdown-body">
+            <h1 v-html="$page.post.title"/>
+            <img :src="$page.post.featuredImage" alt="blog" />
             <div v-html="$page.post.content" />
         </div>
     </Layout>
@@ -11,6 +13,7 @@ query Post ($path: String!) {
   post: post (path: $path) {
     title
     content
+    featuredImage
   }
 }
 </page-query>
